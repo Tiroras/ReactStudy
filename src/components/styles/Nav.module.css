@@ -1,0 +1,14 @@
+.nav{
+    grid-area: n;
+
+    border-radius: 5px;
+
+    background-color: #FF4040;
+    color: white;
+
+    margin-top: 2vh;
+    padding-top: 3vh;
+
+    font-size: 3vh;
+    text-align: center;
+}

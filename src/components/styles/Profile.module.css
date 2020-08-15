@@ -1,0 +1,11 @@
+.profile {
+    grid-area: c;
+
+    background-color: white;
+
+    border-radius: 5px;
+
+    margin-top: 2vh;
+    margin-left: 1vw;
+    padding: 1vw;
+}

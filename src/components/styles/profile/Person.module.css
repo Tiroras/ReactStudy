@@ -1,0 +1,20 @@
+.person{
+    display: flex;
+}
+
+.image{
+    grid-area: image;
+}
+
+.image img{
+    width: 100px;
+    height: 100px;
+
+    border-radius: 5px;
+}
+
+.info{
+    margin-left: 1vw;
+}
+
+
