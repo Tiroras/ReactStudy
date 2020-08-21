@@ -1,20 +1,28 @@
 import React from 'react';
+import {BrowserRouter, NavLink} from "react-router-dom";
 
 export default function DialogItem(props) {
     return(
-        <div className="item">
+        <BrowserRouter>
+            <NavLink to={`/dialogs/${props.name}`}>
 
-            <div className="userImage">
-                {props.image}
-            </div>
+                <div className="item">
 
-            <div className="userName">
-                {props.name}
-            </div>
+                    <div className="userImage">
+                        {props.image}
+                    </div>
 
-            <div className="userLastMessage">
-                {props.message}
-            </div>
-        </div>
+                    <div className="userName">
+                        {props.name}
+                    </div>
+
+                    <div className="userLastMessage">
+                        {props.message}
+                    </div>
+
+                </div>
+
+            </NavLink>
+        </BrowserRouter>
     )
 }

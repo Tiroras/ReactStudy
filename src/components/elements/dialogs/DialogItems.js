@@ -1,12 +1,14 @@
 import React from 'react';
 import DialogItem from "./DialogItem";
+import classes from '../../styles/dialogs/DialogItems.module.css';
 
 export default function DialogItems(props){
-    return(
-        <div className="dialog-items">
-            <DialogItem name="Vlad" message="DOKA2 cruto"/>
 
-            <DialogItem name="Mur" message="DOKA2 ne cruto"/>
+    return(
+        <div className={classes.block}>
+            {props.data.map((prop => (
+                <DialogItem name={prop.name} message={prop.message} />
+            )))}
         </div>
     )
 }

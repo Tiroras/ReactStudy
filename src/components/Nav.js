@@ -1,31 +1,46 @@
 import React from 'react';
-import classes from './styles/Nav.module.css';
+import classes from './Nav.module.css';
+import {NavLink} from "react-router-dom";
 
-export default function Nav(){
+export default function Nav(props){
     return(
         <nav className={classes.nav}>
 
-            <div>
-                <a>Profile</a>
-            </div>
+
 
             <div>
-                <a>Messages</a>
-            </div>
-
-            <div>
-                <a>News</a>
-            </div>
-
-            <div>
-                <a>Music</a>
-            </div>
-
-            <div>
-                Settings
+                <NavLink to="/profile">Profile</NavLink>
             </div>
 
 
+
+            <div>
+                <NavLink to="/dialogs">Dialogs</NavLink>
+            </div>
+
+
+
+            <div>
+                <NavLink to="/news">News</NavLink>
+            </div>
+
+
+
+            <div>
+                <NavLink to="/music">Music</NavLink>
+            </div>
+
+
+
+            <div>
+                <NavLink to="/settings">Settings</NavLink>
+            </div>
+
+
+
+            <div>
+                {}
+            </div>
         </nav>
     )
 }

@@ -1,7 +1,8 @@
 .header{
     grid-area: h;
 
-    background-color: #FF4040;
+    /*background-color: #FF4040;*/
+    background-color: #4765A9;
 
     border-radius: 5px;
 }

@@ -1,22 +1,29 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import './App.css'
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Profile from "./components/Profile";
+import BrowserRouter from 'react-router-dom/BrowserRouter'
+import Content from "./components/Content";
 
 
-class App extends React.Component{
-  render(){
+
+function App(props){
     return(
-        <div className="app-wrapper">
-          <Header />
+        <BrowserRouter>
+            <div className="app-wrapper">
+              <Header />
 
-          <Nav />
+              <Nav friends={props.data.sidebar}/>
 
-          <Profile />
-        </div>
+              <Content
+                  data={props.data.state}
+                  addPost={props.data.addPost}
+                  updateNewPost={props.data.updateNewPostText}
+              />
+
+            </div>
+        </BrowserRouter>
     )
-  }
 }
 
 
