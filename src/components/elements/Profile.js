@@ -14,12 +14,11 @@ export default function Profile(props){
             <div className="posts">
 
                 <NewPost
-                    addPost={props.addPost}
-                    newPostText={props.newPostText}
-                    updateNewPost={props.updateNewPost}
+                    dispatch={props.dispatch}
+                    newPostText={props.data.newPostText}
                 />
 
-                <ListPosts posts={props.posts}/>
+                <ListPosts posts={props.data.posts}/>
             </div>
         </div>
     )

@@ -1,3 +1,7 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+
 let store ={
     _callSubscriber(){
         console.log("rerender has changed")
@@ -18,10 +22,18 @@ let store ={
         },
 
         sidebar: {
+            navLinks:[
+                {title: 'Profile', href: '/profile'},
+                {title: 'Dialogs', href: '/dialogs'},
+                {title: 'News', href: '/news'},
+                {title: 'Music', href: '/music'},
+                {title: 'Settings', href: '/settings'}
+            ],
+
             friends: [
-                {name: "Fafasfasf", img: " "},
-                {name: "FSFASSFSAGGH", img: " "},
-                {name: "hfdshfdv", img: " "}
+                {name: "Fafasfasf", img: "./ "},
+                {name: "FSFASSFSAGGH", img: "./ "},
+                {name: "hfdshfdv", img: "./ "}
             ],
         },
 
@@ -30,6 +42,7 @@ let store ={
                 {id: 1, text: "fafsfasf", likesCount: 111, attachment: " "},
                 {id: 2, text: "fafsfasf", likesCount: 111, attachment: " "}
             ],
+
             newPostText: 'it-kama'
         }
     },
@@ -38,54 +51,44 @@ let store ={
       return this._state;
     },
 
-    addPost(){
-        let newPost = {
-            id: 3,
-            text: this._state.profilePage.newPostText,
-            likesCount: 0,
-            attachment: " "
-        }
-
-        this._state.profilePage.posts.push(newPost);
-        this._callSubscriber(this._state);
-    },
-
-    updateNewPostText(newText){
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-
     subscribe(observer){
         this._callSubscriber = observer;
+    },
+
+
+    dispatch(action){
+        if(action.type === ADD_POST){
+            let newPost = {
+                id: 3,
+                text: this._state.profilePage.newPostText,
+                likesCount: 0,
+                attachment: " "
+            }
+
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        }
+
+        else if(action.type === UPDATE_NEW_POST_TEXT){
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
+
     }
 }
 
 
 
-// export const addPost = () =>{
-//     let newPost = {
-//         id: 3,
-//         text: state.profilePage.newPostText,
-//         likesCount: 0,
-//         attachment: " "
-//     }
-//
-//     state.profilePage.posts.push(newPost);
-//     rerenderEntireTree(state);
-// }
+export const addPostActionCreator = () =>{
+    return { type: ADD_POST}
+}
 
 
 
-// export const updateNewPostText = (newText) =>{
-//     state.profilePage.newPostText = newText;
-//     rerenderEntireTree(state)
-// }
-
-
-
-// export const subscribe = (observer) =>{
-//     rerenderEntireTree = observer;
-// }
-
+export const updateNewPostTextActionCreator = (text) =>{
+    return { type: UPDATE_NEW_POST_TEXT, newText: text }
+}
 
 export default store;
+window.store = store;

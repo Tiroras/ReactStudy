@@ -13,12 +13,11 @@ function App(props){
             <div className="app-wrapper">
               <Header />
 
-              <Nav friends={props.data.sidebar}/>
+              <Nav data={props.data.sidebar} />
 
               <Content
-                  data={props.data.state}
-                  addPost={props.data.addPost}
-                  updateNewPost={props.data.updateNewPostText}
+                  data={props.data}
+                  dispatch={props.dispatch}
               />
 
             </div>

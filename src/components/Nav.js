@@ -1,46 +1,17 @@
 import React from 'react';
 import classes from './Nav.module.css';
 import {NavLink} from "react-router-dom";
+import NavLinks from "./NavLinks";
+import NavFriends from "./styles/NavFriends";
 
 export default function Nav(props){
     return(
         <nav className={classes.nav}>
 
+            <NavLinks data={props.data.navLinks} />
 
 
-            <div>
-                <NavLink to="/profile">Profile</NavLink>
-            </div>
-
-
-
-            <div>
-                <NavLink to="/dialogs">Dialogs</NavLink>
-            </div>
-
-
-
-            <div>
-                <NavLink to="/news">News</NavLink>
-            </div>
-
-
-
-            <div>
-                <NavLink to="/music">Music</NavLink>
-            </div>
-
-
-
-            <div>
-                <NavLink to="/settings">Settings</NavLink>
-            </div>
-
-
-
-            <div>
-                {}
-            </div>
+            <NavFriends data={props.data.friends} />
         </nav>
     )
 }

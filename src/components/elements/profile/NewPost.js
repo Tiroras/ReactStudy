@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from '../../styles/profile/NewPost.module.css'
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
 
 export default function NewPost(props){
     debugger;
@@ -7,12 +8,12 @@ export default function NewPost(props){
 
     let addPost = () =>{
         let text = newPostElement.current.value;
-        props.addPost(text);
+        props.dispatch(addPostActionCreator());
     }
 
     let onPostChange = () =>{
         let text = newPostElement.current.value;
-        props.updateNewPost(text);
+        props.dispatch(updateNewPostTextActionCreator(text));
     }
 
     return(

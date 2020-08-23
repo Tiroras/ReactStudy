@@ -13,10 +13,8 @@ export default function Content(props){
 
 
             <Route render={() => <Profile
-                posts={props.data.profilePage.posts}
-                newPostText={props.data.profilePage.newPostText}
-                addPost={props.addPost}
-                updateNewPost={props.updateNewPost}
+                data={props.data.profilePage}
+                dispatch={props.dispatch}
             />} path="/profile"/>
 
 
