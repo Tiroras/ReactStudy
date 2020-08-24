@@ -1,8 +1,8 @@
 import React from 'react';
-import StoreContext from "../../../store-context";
 import Dialogs from "./Dialogs";
+import StoreContext from "../../store-context";
 
-export default function DialogItems(props){
+export default function DialogsContainer(props){
 
     return(
         <StoreContext.Consumer>

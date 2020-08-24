@@ -5,6 +5,7 @@ import Dialogs from "./elements/Dialogs";
 import News from "./elements/News";
 import Music from "./elements/Music";
 import Settings from "./elements/Settings";
+import DialogsContainer from "./elements/DialogsContainer";
 
 export default function Content(props){
     return(
@@ -19,7 +20,7 @@ export default function Content(props){
 
 
 
-            <Route render={() => <Dialogs
+            <Route render={() => <DialogsContainer
                 // data={props.dialogsData}
                 // dispatch={props.dispatch}
             />} path="/dialogs"/>
