@@ -6,12 +6,12 @@ export default function NewMessage(props){
     let newMessageElement = React.createRef();
 
     let sendMessage = () => {
-        props.dispatch(sendMessageCreator());
+        props.sendMessage();
     }
 
     let onMessageChange = (e) =>{
         let body = e.target.value;
-        props.dispatch(updateNewMessageTextCreator(body));
+        props.onMessageChange(body)
     }
 
     return(

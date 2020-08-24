@@ -13,11 +13,14 @@ function App(props){
             <div className="app-wrapper">
               <Header />
 
-              <Nav data={props.data.sidebar} />
+              <Nav
+                  // data={props.data.sidebarData}
+              />
 
               <Content
-                  data={props.data}
-                  dispatch={props.dispatch}
+                  // profileData={props.data.profileData}
+                  // dialogsData={props.data.dialogsData}
+                  // dispatch={props.dispatch}
               />
 
             </div>

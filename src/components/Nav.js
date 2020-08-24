@@ -7,10 +7,14 @@ export default function Nav(props){
     return(
         <nav className={classes.nav}>
 
-            <NavLinks data={props.data.navLinks} />
+            <NavLinks
+                // data={props.data.navLinks}
+            />
 
 
-            <NavFriends data={props.data.friends} />
+            <NavFriends
+                // data={props.data.friends}
+            />
         </nav>
     )
 }

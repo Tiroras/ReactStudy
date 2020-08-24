@@ -8,14 +8,16 @@ export default function Dialogs(props){
         <div className={classes.block}>
 
             <div>
-                <DialogItems data = {props.data.dialogs} />
+                <DialogItems
+                    // data = {props.data.dialogs}
+                />
             </div>
 
             <div>
                 <Messages
-                    data ={props.data.messages}
-                    newMessageBody={props.data.newMessageBody}
-                    dispatch={props.dispatch}
+                    // data ={props.data.messages}
+                    // newMessageBody={props.data.newMessageBody}
+                    // dispatch={props.dispatch}
                 />
             </div>
 

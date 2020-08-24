@@ -13,15 +13,15 @@ export default function Content(props){
 
 
             <Route render={() => <Profile
-                data={props.data.profilePage}
-                dispatch={props.dispatch}
+                // data={props.profileData}
+                // dispatch={props.dispatch}
             />} path="/profile"/>
 
 
 
             <Route render={() => <Dialogs
-                data={props.data.dialogsPage}
-                dispatch={props.dispatch}
+                // data={props.dialogsData}
+                // dispatch={props.dispatch}
             />} path="/dialogs"/>
 
 

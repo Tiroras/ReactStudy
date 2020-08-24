@@ -2,7 +2,21 @@ const SEND_MESSAGE = 'SEND-MESSAGE'
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 
-const dialogsReducer = (state, action) =>{
+let initialState = {
+    messages: [
+        {id: 1, name: "fafafsfafs", message: "fafsfafsfsa"},
+        {id: 2, name: "ghfdhhsdhsd", message: "gfasfsaffsfsaf"}
+    ],
+
+    dialogs: [
+        {id: 1, name: "Vlad", message: "Olololololollolol"},
+        {id: 2, name: "VRas", message: "Mololololo"}
+    ],
+
+    newMessageBody: ''
+}
+
+const dialogsReducer = (state = initialState, action) =>{
     switch (action.type) {
         case SEND_MESSAGE:{
             let newMessage = {
