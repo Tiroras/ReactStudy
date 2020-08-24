@@ -4,7 +4,6 @@ import classes from "../../styles/dialogs/Messages.module.css"
 import NewMessage from "./NewMessage";
 
 export default function Messages(props) {
-
     return(
         <div className={classes.block}>
 
@@ -17,6 +16,8 @@ export default function Messages(props) {
             <NewMessage
                 // dispatch={props.dispatch}
                 newMessageBody={props.newMessageBody}
+                sendMessage={props.sendMessage}
+                onMessageChange={props.onMessageChange}
             />
 
         </div>

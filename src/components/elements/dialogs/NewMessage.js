@@ -3,6 +3,7 @@ import classes from '../../styles/dialogs/NewMessage.module.css';
 import {sendMessageCreator, updateNewMessageTextCreator} from "../../../redux/dialogs-reducer";
 
 export default function NewMessage(props){
+    debugger;
     let newMessageElement = React.createRef();
 
     let sendMessage = () => {
