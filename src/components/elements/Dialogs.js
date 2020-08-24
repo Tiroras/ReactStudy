@@ -9,14 +9,14 @@ export default function Dialogs(props){
 
             <div>
                 <DialogItems
-                    // data = {props.data.dialogs}
+                    data = {props.dialogs}
                 />
             </div>
 
             <div>
                 <Messages
-                    // data ={props.data.messages}
-                    // newMessageBody={props.data.newMessageBody}
+                    data ={props.messages}
+                    newMessageBody={props.newMessageBody}
                     // dispatch={props.dispatch}
                 />
             </div>

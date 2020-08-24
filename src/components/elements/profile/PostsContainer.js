@@ -30,7 +30,7 @@ export default function PostsContainer(props){
                         />
 
                         <ListPosts
-                            data={state.posts}
+                            posts={state.posts}
                         />
                     </>
                 )}}

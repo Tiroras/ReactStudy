@@ -3,6 +3,7 @@ import Person from "./profile/Person";
 import classes from "../styles/Profile.module.css"
 import ListPosts from "./profile/ListPosts";
 import NewPostContainer from "./profile/NewPostContainer";
+import PostsContainer from "./profile/PostsContainer";
 
 export default function Profile(props){
 
@@ -11,17 +12,19 @@ export default function Profile(props){
 
             <Person />
 
-            <div className="posts">
+            {/*<div className="posts">*/}
 
-                <NewPostContainer
-                    // dispatch={props.dispatch}
-                    // newPostText={props.data.newPostText}
-                />
+            {/*    <NewPostContainer*/}
+            {/*        // dispatch={props.dispatch}*/}
+            {/*        // newPostText={props.data.newPostText}*/}
+            {/*    />*/}
 
-                <ListPosts
-                    // posts={props.data.posts}
-                />
-            </div>
+            {/*    <ListPosts*/}
+            {/*        // posts={props.data.posts}*/}
+            {/*    />*/}
+            {/*</div>*/}
+
+            <PostsContainer />
         </div>
     )
 }
