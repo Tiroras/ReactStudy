@@ -10,11 +10,14 @@ export default function Messages(props) {
 
             <div>
                 {props.data.map((prop) => (
-                    <Message name={prop.name} message={prop.message}/>
+                    <Message key={props.id} name={prop.name} message={prop.message}/>
                 ))}
             </div>
 
-            <NewMessage />
+            <NewMessage
+                dispatch={props.dispatch}
+                newMessageBody={props.newMessageBody}
+            />
 
         </div>
     )

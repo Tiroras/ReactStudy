@@ -12,7 +12,11 @@ export default function Dialogs(props){
             </div>
 
             <div>
-                <Messages data ={props.data.messages} />
+                <Messages
+                    data ={props.data.messages}
+                    newMessageBody={props.data.newMessageBody}
+                    dispatch={props.dispatch}
+                />
             </div>
 
         </div>

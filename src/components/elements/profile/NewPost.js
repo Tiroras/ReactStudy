@@ -1,13 +1,11 @@
 import React from 'react'
 import classes from '../../styles/profile/NewPost.module.css'
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
 
 export default function NewPost(props){
-    debugger;
     let newPostElement = React.createRef();
 
     let addPost = () =>{
-        let text = newPostElement.current.value;
         props.dispatch(addPostActionCreator());
     }
 

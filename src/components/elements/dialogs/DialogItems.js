@@ -7,7 +7,7 @@ export default function DialogItems(props){
     return(
         <div className={classes.block}>
             {props.data.map((prop => (
-                <DialogItem name={prop.name} message={prop.message} />
+                <DialogItem key={props.id} name={prop.name} message={prop.message} />
             )))}
         </div>
     )

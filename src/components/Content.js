@@ -21,6 +21,7 @@ export default function Content(props){
 
             <Route render={() => <Dialogs
                 data={props.data.dialogsPage}
+                dispatch={props.dispatch}
             />} path="/dialogs"/>
 
 
