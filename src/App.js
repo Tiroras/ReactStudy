@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css'
-import Header from "./components/Header";
-import Nav from "./components/Nav";
 import BrowserRouter from 'react-router-dom/BrowserRouter'
 import Content from "./components/Content";
+import NavContainer from "./components/NavContainer";
+import HeaderContainer from "./components/HeaderContainer";
 
 
 
@@ -11,17 +11,11 @@ function App(props){
     return(
         <BrowserRouter>
             <div className="app-wrapper">
-              <Header />
+              <HeaderContainer />
 
-              <Nav
-                  // data={props.data.sidebarData}
-              />
+              <NavContainer />
 
-              <Content
-                  // profileData={props.data.profileData}
-                  // dialogsData={props.data.dialogsData}
-                  // dispatch={props.dispatch}
-              />
+              <Content />
 
             </div>
         </BrowserRouter>

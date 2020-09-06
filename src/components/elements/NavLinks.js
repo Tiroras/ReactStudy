@@ -5,18 +5,12 @@ import StoreContext from "../../store-context";
 
 export default function NavLinks(props){
     return(
-        <StoreContext.Consumer>
-            {(store)=> {
-                let state = store.getState().sidebarData.navLinks;
-                return (
-                    <div>
-                        {state.map((navLink) => (
-                            <div className={classes.elementContainer}>
-                                <NavLink to={navLink.href}>{navLink.title}</NavLink>
-                            </div>
-                        ))}
-                    </div>)
-            }}
-        </StoreContext.Consumer>
+        <div>
+            {props.data.map((navLink) => (
+                <div className={classes.elementContainer}>
+                    <NavLink to={navLink.href}>{navLink.title}</NavLink>
+                </div>
+            ))}
+        </div>
     )
 }

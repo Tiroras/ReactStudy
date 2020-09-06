@@ -17,7 +17,7 @@ export default function Dialogs(props){
                 <Messages
                     data ={props.messages}
                     newMessageBody={props.newMessageBody}
-                    onMessageChange={props.updateMessageText}
+                    onMessageChange={props.updateNewMessageBody}
                     sendMessage={props.sendMessage}
                     // dispatch={props.dispatch}
                 />

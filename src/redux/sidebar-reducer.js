@@ -4,7 +4,8 @@ let initialState = {
         {title: 'Dialogs', href: '/dialogs'},
         {title: 'News', href: '/news'},
         {title: 'Music', href: '/music'},
-        {title: 'Settings', href: '/settings'}
+        {title: 'Settings', href: '/settings'},
+        {title: 'Find users', href: 'search'}
     ],
 
     friends: [

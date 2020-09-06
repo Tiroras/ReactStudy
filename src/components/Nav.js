@@ -8,12 +8,12 @@ export default function Nav(props){
         <nav className={classes.nav}>
 
             <NavLinks
-                // data={props.data.navLinks}
+                data={props.navLinks}
             />
 
 
             <NavFriends
-                // data={props.data.friends}
+                data={props.friends}
             />
         </nav>
     )
