@@ -6,7 +6,7 @@ export default function NavFriends(props) {
         <div className={classes.container}>
             {props.data.map((friend) => (
 
-                <div className={classes.element}>
+                <div className={classes.element} key={friend.id}>
                     <div className={classes.friendAvatar}>
                         <img src={friend.img}/>
                     </div>

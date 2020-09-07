@@ -7,7 +7,7 @@ export default function NavLinks(props){
     return(
         <div>
             {props.data.map((navLink) => (
-                <div className={classes.elementContainer}>
+                <div className={classes.elementContainer} key={navLink.id}>
                     <NavLink to={navLink.href}>{navLink.title}</NavLink>
                 </div>
             ))}
