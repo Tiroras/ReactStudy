@@ -1,7 +1,7 @@
 import React from "react";
-import icon from '../../../../assets/images/1024px-VK.com-logo.svg.png'
+import icon from '../../../../../assets/images/youtube-n-logo-png-11545514814wzxfobuwrg.png'
 
-const VkLink = (props) =>{
+const YoutubeLink = (props) =>{
     return(
         <span>
         {!(props.link === null) ?
@@ -14,4 +14,4 @@ const VkLink = (props) =>{
     )
 }
 
-export default VkLink;
+export default YoutubeLink;

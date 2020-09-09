@@ -1,6 +1,6 @@
 import React from 'react';
 import DialogItem from "./DialogItem";
-import classes from '../../styles/dialogs/DialogItems.module.css';
+import classes from '../../../styles/dialogs/DialogItems.module.css';
 
 export default function DialogItems(props){
     return(

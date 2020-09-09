@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from '../../styles/profile/Person.module.css';
-import Preloader from "../../common/preloader/Preloader";
+import classes from '../../../styles/profile/Person.module.css';
+import Preloader from "../../../common/preloader/Preloader";
 import LookingForAJobTrue from "./lookingForAJob/LookingForAJobTrue";
 import LookingForAJobFalse from "./lookingForAJob/LookingForAJobFalse";
 import GitHubLink from "./contacts/GitHubLink";
@@ -9,6 +9,7 @@ import FacebookLink from "./contacts/FacebookLink";
 import InstagramLink from "./contacts/InstagramLink";
 import TwitterLink from "./contacts/TwitterLink";
 import YoutubeLink from "./contacts/YoutubeLink";
+import userPhoto from "../../../../assets/images/user.png";
 
 export default function Person(props){
     if (!props.profile){
@@ -20,7 +21,7 @@ export default function Person(props){
 
 
             <div className={classes.image}>
-                <img src={props.profile.photos.large}/>
+                <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} />
             </div>
 
 

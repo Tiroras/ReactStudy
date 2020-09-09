@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Nav.module.css';
-import NavLinks from "./elements/NavLinks";
-import NavFriends from "./elements/NavFriends";
+import NavLinks from "./elements/nav/NavLinks";
+import NavFriends from "./elements/nav/NavFriends";
 
 export default function Nav(props){
     return(

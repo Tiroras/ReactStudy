@@ -1,9 +1,15 @@
 import React from 'react'
-import DialogItems from "./dialogs/DialogItems";
-import Messages from "./dialogs/Messages";
-import classes from '../styles/Dialogs.module.css'
+import DialogItems from "./DialogItems";
+import Messages from "./Messages";
+import classes from '../../../styles/Dialogs.module.css'
+import {Redirect} from "react-router-dom";
 
 export default function Dialogs(props){
+
+    if(props.isAuth === false){
+        return <Redirect to={"/login"} />
+    }
+
     return(
         <div className={classes.block}>
 

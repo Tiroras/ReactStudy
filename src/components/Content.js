@@ -1,11 +1,12 @@
 import React from 'react';
 import Route from "react-router-dom/Route";
-import News from "./elements/News";
-import Music from "./elements/Music";
-import Settings from "./elements/Settings";
-import DialogsContainer from "./elements/DialogsContainer";
-import UsersContainer from "./elements/UsersContainer";
-import ProfileContainer from "./elements/ProfileContainer";
+import News from "./elements/content/news/News";
+import Music from "./elements/content/mucis/Music";
+import Settings from "./elements/content/settings/Settings";
+import DialogsContainer from "./elements/content/dialogs/DialogsContainer";
+import UsersContainer from "./elements/content/users/UsersContainer";
+import ProfileContainer from "./elements/content/profile/ProfileContainer";
+import Login from "./elements/content/login/Login";
 
 export default function Content(props){
     return(
@@ -28,6 +29,8 @@ export default function Content(props){
             <Route render={() => <Settings />} path="/settings" />
 
             <Route render={() => <UsersContainer />} path="/search" />
+
+            <Route render={() => <Login />} path="/login" />
 
         </div>
     )

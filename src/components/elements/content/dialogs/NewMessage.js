@@ -1,5 +1,5 @@
 import React from "react";
-import classes from '../../styles/dialogs/NewMessage.module.css';
+import classes from '../../../styles/dialogs/NewMessage.module.css';
 
 export default function NewMessage(props){
     let newMessageElement = React.createRef();

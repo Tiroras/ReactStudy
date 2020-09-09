@@ -1,5 +1,5 @@
 import React from "react";
-import icon from '../../../../assets/images/twitter-3-logo-png-transparent.png'
+import icon from '../../../../../assets/images/twitter-3-logo-png-transparent.png'
 
 const TwitterLink = (props) =>{
     return(

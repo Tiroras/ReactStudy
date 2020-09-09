@@ -1,7 +1,7 @@
 import React from "react";
-import icon from '../../../../assets/images/facebook_logos_PNG19748.png'
+import icon from '../../../../../assets/images/1024px-VK.com-logo.svg.png'
 
-const FacebookLink = (props) =>{
+const VkLink = (props) =>{
     return(
         <span>
         {!(props.link === null) ?
@@ -14,4 +14,4 @@ const FacebookLink = (props) =>{
     )
 }
 
-export default FacebookLink;
+export default VkLink;

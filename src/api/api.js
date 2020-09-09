@@ -21,18 +21,19 @@ export const usersAPI = {
         });
     },
 
-    getAuth(){
-        return instance.get('auth/me').then(response => {
-            return response.data;
-        });
-    },
-
-    unfollow(id, unfollow){
+    unfollow(id){
         return instance.delete(`follow/${id}`)
     },
 
-    follow(id, follow){
+    follow(id){
         return instance.post(`follow/${id}`)
     }
 }
 
+export const authAPI = {
+    me(){
+        return instance.get('auth/me').then(response => {
+            return response.data;
+        });
+    }
+}

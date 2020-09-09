@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import classes from '../styles/NavLinks.module.css'
-import StoreContext from "../../store-context";
+import classes from '../../styles/NavLinks.module.css'
+import StoreContext from "../../../store-context";
 
 export default function NavLinks(props){
     return(

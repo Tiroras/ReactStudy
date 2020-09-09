@@ -1,6 +1,6 @@
 import React from 'react';
 import Message from "./Message";
-import classes from "../../styles/dialogs/Messages.module.css"
+import classes from "../../../styles/dialogs/Messages.module.css"
 import NewMessage from "./NewMessage";
 
 export default function Messages(props) {

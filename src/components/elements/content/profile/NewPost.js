@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from '../../styles/profile/NewPost.module.css'
+import classes from '../../../styles/profile/NewPost.module.css'
 
 export default function NewPost(props){
     let newPostElement = React.createRef();

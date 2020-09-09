@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../styles/Users.module.css";
-import User from "./users/User";
-import {toggleFollowingInProgress} from "../../redux/users-reducer";
+import styles from "../../../styles/Users.module.css";
+import User from "./User";
+import {Redirect} from "react-router-dom";
 
 
 const Users = (props) =>{
@@ -10,6 +10,10 @@ const Users = (props) =>{
 
     for(let i=0; i <= pagesCount; i++){
         pages.push(i+1);
+    }
+
+    if(props.isAuth === false){
+        return <Redirect to={"/login"} />
     }
 
     return (

@@ -1,7 +1,7 @@
 import React from "react";
-import icon from '../../../../assets/images/youtube-n-logo-png-11545514814wzxfobuwrg.png'
+import icon from '../../../../../assets/images/png-clipart-instagram-logo-icon-instagram-icon-text-logo.png'
 
-const YoutubeLink = (props) =>{
+const InstagramLink = (props) =>{
     return(
         <span>
         {!(props.link === null) ?
@@ -14,4 +14,4 @@ const YoutubeLink = (props) =>{
     )
 }
 
-export default YoutubeLink;
+export default InstagramLink;
