@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/Users.module.css";
 import User from "./users/User";
+import {toggleFollowingInProgress} from "../../redux/users-reducer";
 
 
 const Users = (props) =>{
@@ -18,9 +19,8 @@ const Users = (props) =>{
                 {pages.map((page) => (
                     <span
                         className={props.currentPage === page && styles.selectedPage}
-                        onClick={(e)=> {props.onPageChanged(page)}}>
-
-                        {page}</span>
+                        onClick={(e)=> {props.onPageChanged(page)}}
+                    >{page}</span>
                 ))}
             </div>
 
@@ -36,9 +36,11 @@ const Users = (props) =>{
                     // country={user.location.country}
                     // city={user.location.city}
                     followed={user.followed}
+                    followSuccess={props.followSuccess}
+                    unfollowSuccess={props.unfollowSuccess}
+                    toggleFollowingInProgress={props.toggleFollowingInProgress}
+                    followingInProgress={props.followingInProgress}
 
-                    follow={props.follow}
-                    unfollow={props.unfollow}
                 />))}
         </div>
 
