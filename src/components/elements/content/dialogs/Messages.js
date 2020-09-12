@@ -3,7 +3,10 @@ import Message from "./Message";
 import classes from "../../../styles/dialogs/Messages.module.css"
 import NewMessage from "./NewMessage";
 
-export default function Messages(props) {
+const Messages = (props) => {
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessage)
+    }
 
     return(
         <div className={classes.block}>
@@ -15,13 +18,14 @@ export default function Messages(props) {
             </div>
 
             <NewMessage
-                // dispatch={props.dispatch}
+                onSubmit={addNewMessage}
                 newMessageBody={props.newMessageBody}
                 sendMessage={props.sendMessage}
                 onMessageChange={props.onMessageChange}
-                onSumbit={}
             />
 
         </div>
     )
 }
+
+export default Messages;

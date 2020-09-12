@@ -2,13 +2,15 @@ import React from 'react'
 import NewPost from "./NewPost";
 import ListPosts from "./ListPosts";
 
-export default function Posts(props) {
+const Posts = (props) => {
+    let addNewPost = (values) =>{
+        props.addPost(values.newPostField)
+    }
+
     return(
         <>
             <NewPost
-                updateNewPostText={props.updateNewPostText}
-                addPost={props.addPost}
-                newPostText={props.newPostText}
+                onSubmit={addNewPost}
             />
 
             <ListPosts
@@ -17,3 +19,5 @@ export default function Posts(props) {
         </>
     )
 }
+
+export default Posts;
