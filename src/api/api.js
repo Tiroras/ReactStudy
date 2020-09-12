@@ -16,9 +16,7 @@ export const usersAPI = {
     },
 
     getProfile(userId){
-        return instance.get(`profile/${userId}`).then(response => {
-            return response.data;
-        });
+        return profileAPI.getProfile(userId);
     },
 
     unfollow(id){
@@ -35,5 +33,26 @@ export const authAPI = {
         return instance.get('auth/me').then(response => {
             return response.data;
         });
+    },
+
+    login(){
+        return instance.post('auth/login')
+    }
+}
+
+export const profileAPI = {
+    getProfile(userId){
+        return instance.get(`profile/${userId}`).then(response => {
+            return response.data;
+        });
+    },
+
+
+    getStatus(userId){
+        return instance.get(`profile/status/${userId}`)
+    },
+
+    updateStatus(status){
+        return instance.put('profile/status', {status: status});
     }
 }

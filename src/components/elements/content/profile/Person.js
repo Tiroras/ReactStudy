@@ -10,6 +10,7 @@ import InstagramLink from "./contacts/InstagramLink";
 import TwitterLink from "./contacts/TwitterLink";
 import YoutubeLink from "./contacts/YoutubeLink";
 import userPhoto from "../../../../assets/images/user.png";
+import Status from "./Status";
 
 export default function Person(props){
     if (!props.profile){
@@ -50,7 +51,10 @@ export default function Person(props){
                     </span>
                 </div>
 
-
+                <Status
+                    status={props.status}
+                    updateStatus={props.updateStatus}
+                />
             </div>
         </div>
     )

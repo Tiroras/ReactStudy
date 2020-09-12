@@ -28,7 +28,7 @@ export default function Content(props){
 
             <Route render={() => <Settings />} path="/settings" />
 
-            <Route render={() => <UsersContainer />} path="/search" />
+            <Route render={() => <UsersContainer />} path="/users" />
 
             <Route render={() => <Login />} path="/login" />
 

@@ -1,0 +1,20 @@
+.form{
+
+}
+
+.form div{
+    margin: 1vh 0;
+}
+
+.form input{
+    border-radius: 5px;
+    border-color: #4765A9;
+
+    height: 3vh;
+}
+
+.form span{
+    display: flex;
+    align-items: center;
+    margin-right: 3vw;
+}

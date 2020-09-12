@@ -5,7 +5,7 @@ let initialState = {
         {id: 3, title: 'News', href: '/news'},
         {id: 4, title: 'Music', href: '/music'},
         {id: 5, title: 'Settings', href: '/settings'},
-        {id: 6, title: 'Find users', href: 'search'}
+        {id: 6, title: 'Users', href: '/users'}
     ],
 
     friends: [

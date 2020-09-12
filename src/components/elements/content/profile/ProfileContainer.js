@@ -1,9 +1,8 @@
 import React from 'react'
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {setUserProfile} from "../../../../redux/profile-reducer";
-import {Redirect, withRouter} from "react-router-dom";
-import {usersAPI} from "../../../../api/api";
+import {getStatus, getUserProfile, updateStatus} from "../../../../redux/profile-reducer";
+import {withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
@@ -16,15 +15,19 @@ class ProfileContainer extends React.Component{
         if (!userId){
             userId = this.props.myId;
         }
-        usersAPI.getProfile(userId).then(response =>{
-            this.props.setUserProfile(response)
-        });
+        this.props.getUserProfile(userId);
+        this.props.getStatus(userId);
     }
 
 
     render() {
         return (
-            <Profile {...this.props} profile={this.props.profile}/>
+            <Profile
+                {...this.props}
+                profile={this.props.profile}
+                status={this.props.status}
+                updateStatus={this.props.updateStatus}
+            />
         )
     }
 }
@@ -33,7 +36,10 @@ class ProfileContainer extends React.Component{
 let mapStateToProps = (state) => ({
     profile: state.profileData.profile,
     myId: state.auth.userId,
+    status: state.profileData.status
 })
 
 
-export default compose(connect(mapStateToProps, {setUserProfile}), withRouter, withAuthRedirect)(ProfileContainer)
+export default compose(connect(
+    mapStateToProps, {getUserProfile, getStatus, updateStatus}
+    ), withRouter, withAuthRedirect)(ProfileContainer)

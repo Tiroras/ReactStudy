@@ -9,7 +9,11 @@ export default function Profile(props){
     return(
         <div className={classes.profile}>
 
-            <Person profile={props.profile}/>
+            <Person
+                profile={props.profile}
+                status={props.status}
+                updateStatus={props.updateStatus}
+            />
 
 
             <PostsContainer />
