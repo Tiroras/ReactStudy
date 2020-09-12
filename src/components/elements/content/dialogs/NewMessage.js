@@ -1,7 +1,8 @@
 import React from "react";
 import classes from '../../../styles/dialogs/NewMessage.module.css';
+import {Field, reduxForm} from "redux-form";
 
-export default function NewMessage(props){
+function NewMessage(props){
     let newMessageElement = React.createRef();
 
     let sendMessage = () => {
@@ -14,10 +15,11 @@ export default function NewMessage(props){
     }
 
     return(
-        <div className={classes.newMessage}>
-
+        <form onSubmit={props.handleSubmit} className={classes.newMessage}>
             <div className={classes.input}>
-                <textarea
+                <Field
+                    component={'textarea'}
+                    name={'enterMessage'}
                     ref={newMessageElement}
                     placeholder="Enter message"
                     value={props.newMessageBody}
@@ -28,6 +30,10 @@ export default function NewMessage(props){
             <div className={classes.button}>
                 <button onClick={sendMessage}>Отправить</button>
             </div>
-        </div>
+        </form>
     )
 }
+
+const NewMessageReduxForm = reduxForm({form: 'newMessageForm'})(NewMessage);
+
+export default NewMessageReduxForm;

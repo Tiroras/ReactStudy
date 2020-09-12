@@ -1,7 +1,8 @@
 import React from 'react'
 import classes from '../../../styles/profile/NewPost.module.css'
+import {Field, reduxForm} from "redux-form";
 
-export default function NewPost(props){
+function NewPost(props){
     let newPostElement = React.createRef();
 
     let addPost = () =>{
@@ -14,10 +15,12 @@ export default function NewPost(props){
     }
 
     return(
-        <div className={classes.newPost}>
+        <form onSubmit={props.handleSubmit} className={classes.newPost}>
             <div className={classes.input}>
 
-                <textarea
+                <Field
+                    component={'textarea'}
+                    name={'newPostField'}
                     onChange={onPostChange}
                     ref={newPostElement}
                     value={props.newPostText}
@@ -28,6 +31,10 @@ export default function NewPost(props){
             <div className={classes.button}>
                 <button onClick={addPost}>Опубликовать</button>
             </div>
-        </div>
+        </form>
     )
 }
+
+const NewPostReduxForm = reduxForm({form: 'newPost'})(NewPost)
+
+export default NewPostReduxForm;

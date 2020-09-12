@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from '../../../styles/login/Login.module.css'
 import {Field, reduxForm} from "redux-form";
+import {authAPI} from "../../../../api/api";
 
 let LoginForm = (props) =>{
     return(
@@ -46,6 +47,7 @@ const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 const Login = (props) =>{
     const onSubmit = (formData) =>{
         console.log(formData)
+        authAPI.login(formData.email, formData.password, formData.rememberMe)
     }
 
     return(
@@ -56,5 +58,6 @@ const Login = (props) =>{
         </div>
     )
 }
+
 
 export default Login;

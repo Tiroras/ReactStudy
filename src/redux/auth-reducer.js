@@ -2,8 +2,6 @@ import {authAPI} from "../api/api";
 
 const SET_USER_DATA = 'SET-USER-DATA';
 
-const LOGIN = 'LOGIN';
-
 let initialState = {
     userId: null,
     email: null,
@@ -13,9 +11,11 @@ let initialState = {
 
 const authReducer = (state = initialState, action) =>{
     switch (action.type) {
-        case SET_USER_DATA:
+        case SET_USER_DATA: {
             return {...state, ...action.data, isAuth: true};
             break;
+        }
+
 
         default: return state;
 
@@ -35,5 +35,6 @@ export const authentication = () =>{
         });
     }
 }
+
 
 export default authReducer;
