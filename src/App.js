@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css'
-import BrowserRouter from 'react-router-dom/BrowserRouter'
 import Content from "./components/Content";
 import NavContainer from "./components/NavContainer";
 import HeaderContainer from "./components/HeaderContainer";
+import {BrowserRouter} from "react-router-dom";
 
 
 

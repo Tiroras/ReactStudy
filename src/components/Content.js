@@ -1,5 +1,4 @@
 import React from 'react';
-import Route from "react-router-dom/Route";
 import News from "./elements/content/news/News";
 import Music from "./elements/content/mucis/Music";
 import Settings from "./elements/content/settings/Settings";
@@ -7,6 +6,7 @@ import DialogsContainer from "./elements/content/dialogs/DialogsContainer";
 import UsersContainer from "./elements/content/users/UsersContainer";
 import ProfileContainer from "./elements/content/profile/ProfileContainer";
 import Login from "./elements/content/login/Login";
+import {Route} from "react-router-dom";
 
 export default function Content(props){
     return(

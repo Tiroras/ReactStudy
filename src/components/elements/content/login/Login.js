@@ -2,34 +2,41 @@ import React from 'react';
 import classes from '../../../styles/login/Login.module.css'
 import {Field, reduxForm} from "redux-form";
 import {authAPI} from "../../../../api/api";
+import {Input} from "../../../common/formscontrol/FormsControls";
+import {maxLengthCreator, required} from "../../../../utils/validators/validators";
+
+const maxLength = maxLengthCreator(20)
 
 let LoginForm = (props) =>{
     return(
         <form className={classes.form} onSubmit={props.handleSubmit}>
             <div>
                 <Field
-                    component={'input'}
+                    component={Input}
                     placeholder={'Login'}
                     name={'login'}
+                    validate={[required, maxLength]}
                 />
             </div>
             <div>
                 <Field
-                    component={'input'}
+                    component={Input}
                     placeholder={'Password'}
                     name={'password'}
+                    validate={[required, maxLength]}
                 />
             </div>
             <div>
                 <Field
-                    component={'input'}
+                    component={Input}
                     placeholder={'Repeat password'}
                     name={'repeatPassword'}
+                    validate={[required, maxLength]}
                 />
             </div>
             <span>
                 <Field
-                    component={'input'}
+                    component={Input}
                     type={'checkbox'}
                     name={'rememberMe'}
                 /> Remember me
