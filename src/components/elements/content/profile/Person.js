@@ -11,6 +11,7 @@ import TwitterLink from "./contacts/TwitterLink";
 import YoutubeLink from "./contacts/YoutubeLink";
 import userPhoto from "../../../../assets/images/user.png";
 import Status from "./Status";
+import StatusWithHooks from "./StatusWithHooks";
 
 export default function Person(props){
     if (!props.profile){
@@ -51,7 +52,7 @@ export default function Person(props){
                     </span>
                 </div>
 
-                <Status
+                <StatusWithHooks
                     status={props.status}
                     updateStatus={props.updateStatus}
                 />

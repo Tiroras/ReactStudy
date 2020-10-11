@@ -2,18 +2,23 @@ import React from 'react';
 import {connect} from "react-redux";
 import {
     follow,
-    followSuccess, getUsers,
+    followSuccess,
     setCurrentPage,
-    setUsers,
+    setUsers, requestUsers,
     setUsersTotalCount, toggleFollowingInProgress,
     toggleIsFetching, unfollow,
     unfollowSuccess
 } from "../../../../redux/users-reducer";
 import Users from "./Users";
 import Preloader from "../../../common/preloader/Preloader";
-import {Redirect} from "react-router-dom";
-import {withAuthRedirect} from "../../../../hoc/withAuthRedirect";
 import {compose} from "redux";
+import {
+    getCurrentPage,
+    getFetching, getFollowingInProgress,
+    getPageSize,
+    getTotalUsersCount,
+    getUsers
+} from "../../../../redux/users-selectors";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
@@ -52,14 +57,25 @@ class UsersAPIComponent extends React.Component {
 
 
 
+// let mapStateToProps = (state) =>{
+//     return{
+//         users: state.usersData.users,
+//         pageSize: state.usersData.pageSize,
+//         totalUsersCount: state.usersData.totalUsersCount,
+//         currentPage: state.usersData.currentPage,
+//         isFetching: state.usersData.isFetching,
+//         followingInProgress: state.usersData.followingInProgress,
+//     }
+// }
+
 let mapStateToProps = (state) =>{
     return{
-        users: state.usersData.users,
-        pageSize: state.usersData.pageSize,
-        totalUsersCount: state.usersData.totalUsersCount,
-        currentPage: state.usersData.currentPage,
-        isFetching: state.usersData.isFetching,
-        followingInProgress: state.usersData.followingInProgress,
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getFetching(state),
+        followingInProgress: getFollowingInProgress(state),
     }
 }
 
@@ -68,5 +84,5 @@ let mapStateToProps = (state) =>{
 export default compose(connect(mapStateToProps, {
     followSuccess, unfollowSuccess, setUsers,
     setCurrentPage, setUsersTotalCount, toggleIsFetching,
-    toggleFollowingInProgress, getUsers, follow, unfollow
-}), withAuthRedirect)(UsersAPIComponent);
+    toggleFollowingInProgress, requestUsers, follow, unfollow
+}))(UsersAPIComponent);

@@ -10,7 +10,8 @@ export default function Header(props){
 
             <div className={classes.login}>
                 <NavLink to={'/login'} >
-                    {props.isAuth ? props.login : 'Login'}
+                    {props.isAuth ? <div>{props.login}
+                    <button onClick={props.logout}>Log out</button></div> : 'Login'}
                 </NavLink>
             </div>
         </header>

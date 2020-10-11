@@ -1,9 +1,11 @@
 import React from 'react';
 import classes from '../../../styles/login/Login.module.css'
 import {Field, reduxForm} from "redux-form";
-import {authAPI} from "../../../../api/api";
 import {Input} from "../../../common/formscontrol/FormsControls";
 import {maxLengthCreator, required} from "../../../../utils/validators/validators";
+import {connect} from "react-redux";
+import {login} from "../../../../redux/auth-reducer";
+import {Redirect} from "react-router-dom";
 
 const maxLength = maxLengthCreator(20)
 
@@ -13,8 +15,8 @@ let LoginForm = (props) =>{
             <div>
                 <Field
                     component={Input}
-                    placeholder={'Login'}
-                    name={'login'}
+                    placeholder={'Email'}
+                    name={'email'}
                     validate={[required, maxLength]}
                 />
             </div>
@@ -24,16 +26,17 @@ let LoginForm = (props) =>{
                     placeholder={'Password'}
                     name={'password'}
                     validate={[required, maxLength]}
-                />
+                    type={'password'}
+                 />
             </div>
-            <div>
-                <Field
-                    component={Input}
-                    placeholder={'Repeat password'}
-                    name={'repeatPassword'}
-                    validate={[required, maxLength]}
-                />
-            </div>
+            {/*<div>*/}
+            {/*    <Field*/}
+            {/*        component={Input}*/}
+            {/*        placeholder={'Repeat password'}*/}
+            {/*        name={'repeatPassword'}*/}
+            {/*        validate={[required, maxLength]}*/}
+            {/*    />*/}
+            {/*</div>*/}
             <span>
                 <Field
                     component={Input}
@@ -41,6 +44,9 @@ let LoginForm = (props) =>{
                     name={'rememberMe'}
                 /> Remember me
             </span>
+            {props.error && <span>
+                {props.error}
+            </span>}
             <div>
                 <button>Login</button>
             </div>
@@ -54,7 +60,11 @@ const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 const Login = (props) =>{
     const onSubmit = (formData) =>{
         console.log(formData)
-        authAPI.login(formData.email, formData.password, formData.rememberMe)
+        props.login(formData.email, formData.password, formData.rememberMe)
+    }
+
+    if(props.isAuth){
+        return <Redirect to={'/profile'} />
     }
 
     return(
@@ -66,5 +76,8 @@ const Login = (props) =>{
     )
 }
 
+const mapStateToProps = (state) =>({
+    isAuth: state.auth.isAuth
+})
 
-export default Login;
+export default connect(mapStateToProps, {login})(Login);
